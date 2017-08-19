@@ -31,7 +31,7 @@ module.exports = function() {
           revenue = Math.round(value.totalRevenue).toLocaleString()
         } else if (FUNC == 'avg' && !region) {
           var types = _.groupBy(response, 'region');
-          let sum = response.reduce((s, f) => {
+          var sum = response.reduce((s, f) => {
             return f.revenueRV + s; // return the sum of the accumulator and the current time. (as the the new accumulator)
           }, 0);
           var length = Object.keys(types).length
@@ -54,7 +54,7 @@ module.exports = function() {
 
         } else if (!region && !FUNC) {
           // query = "";
-          let sum = response.reduce((s, f) => {
+          var sum = response.reduce((s, f) => {
             return f.revenueRV + s; // return the sum of the accumulator and the current time. (as the the new accumulator)
           }, 0);
           revenue = Math.round(sum).toLocaleString()
@@ -90,7 +90,7 @@ module.exports = function() {
           // console.log(out)
         } else if (FUNC == 'avg' && !region) {
           var types = _.groupBy(response, 'region');
-          let sum = response.reduce((s, f) => {
+          var sum = response.reduce((s, f) => {
             return f.costRV + s; // return the sum of the accumulator and the current time. (as the the new accumulator)
           }, 0);
           var length = Object.keys(types).length
@@ -113,7 +113,7 @@ module.exports = function() {
 
         } else if (!region && !FUNC) {
           // query = "";
-          let sum = response.reduce((s, f) => {
+          var sum = response.reduce((s, f) => {
             return f.costRV + s; // return the sum of the accumulator and the current time. (as the the new accumulator)
           }, 0);
           cost = Math.round(sum).toLocaleString()
